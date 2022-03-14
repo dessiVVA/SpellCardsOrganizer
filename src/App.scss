@@ -1,0 +1,39 @@
+@mixin serif-bolded {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+}
+@mixin sans-light {
+  font-family: "Oswald", sans-serif;
+  font-weight: 200;
+}
+body {
+  margin: 0;
+}
+.card {
+  width: 350px;
+  height: 500px;
+  box-shadow: 2px 2px;
+}
+.header > * {
+  margin: 0;
+}
+.header {
+  display: flex;
+  flex-wrap: wrap;
+
+  .title {
+    @include serif-bolded;
+    text-transform: capitalize;
+    flex: 1 0 60%;
+  }
+  .school {
+    @include sans-light;
+    text-decoration: underline;
+    text-transform: lowercase;
+    align-self: flex-end;
+    flex: 1 0 40%;
+  }
+  .level {
+    @include serif-bolded()
+  }
+}
