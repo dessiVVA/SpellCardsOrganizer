@@ -6,34 +6,89 @@
   font-family: "Oswald", sans-serif;
   font-weight: 200;
 }
+@mixin sans-regular {
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+}
 body {
   margin: 0;
 }
 .card {
   width: 350px;
   height: 500px;
-  box-shadow: 2px 2px;
+  box-shadow: 2px 2px 10px rgba($color: #000000, $alpha: 0.2);
+
+  display: grid;
+  grid-template-rows: 5fr 5fr 5fr 1fr;
 }
 .header > * {
   margin: 0;
+  display: flex;
 }
 .header {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  column-gap: 15px;
 
   .title {
     @include serif-bolded;
+    font-size: 2.8em;
     text-transform: capitalize;
-    flex: 1 0 60%;
+    grid-row: 1 / span 2;
+    padding-top: 10%;
   }
   .school {
     @include sans-light;
+    font-size: 1.2em;
     text-decoration: underline;
     text-transform: lowercase;
-    align-self: flex-end;
-    flex: 1 0 40%;
+    align-items: flex-end;
+    justify-content: flex-end;
   }
   .level {
-    @include serif-bolded()
+    @include serif-bolded();
+    font-size: 2em;
+    font-variant-numeric: lining-nums;
+    justify-content: flex-end;
+  }
+}
+.stats {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  column-gap: 5px;
+  row-gap: 20px;
+
+  padding: 0 30px 0 30px;
+  p {
+    @include sans-light();
+    text-transform: lowercase;
+  }
+  h3 {
+    @include sans-regular();
+    text-transform: uppercase;
+  }
+  div > * {
+    margin: 0;
+  }
+}
+
+.castor {
+  display: grid;
+
+  p, hr {
+    grid-area: 1 / 1;
+  }
+  p {
+    @include sans-light();
+    justify-self: center;
+    background-color: white;
+    padding: 0 8px 0 8px;
+    z-index: 1;
+  }
+  hr {
+    width: 100%;
+    height: 0;
+    margin: auto;
+    color: #000000;
   }
 }
