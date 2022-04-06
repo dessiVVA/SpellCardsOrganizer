@@ -1,9 +1,10 @@
 import React from "react";
+import './Sidebar.scss'
 
 const Sidebar = () => {
   return (
     <div className="container">
-      <h1>Spell preparation</h1>
+      <h1>Spell <br/>preparation</h1>
       
       <div className="navigation">
           <a href="#">concentration</a>
