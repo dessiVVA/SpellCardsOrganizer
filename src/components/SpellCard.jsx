@@ -1,4 +1,5 @@
 import React from "react";
+import './SpellCard.scss'
 
 const SpellCard = () => {
   return (

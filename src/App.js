@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
-import './App.scss';
 import SpellCard from './components/SpellCard';
+import Sidebar from './components/Sidebar';
+import Level from './components/Level';
 
 function App() {
   const url = 'https://api.open5e.com/spells/';
