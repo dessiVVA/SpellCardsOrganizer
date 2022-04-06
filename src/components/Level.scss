@@ -1,0 +1,28 @@
+.flag {
+  background: red;
+  display: inline-block;
+  height: 94px;
+  margin-bottom: 55px;
+  position: relative;
+  width: 60px;
+}
+.flag:before {
+  border-top: 25px solid red;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  content: "";
+  height: 0;
+  left: 0;
+  position: absolute;
+  bottom: -24px;
+  width: 0;
+}
+p{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 37px;
+    line-height: 30px;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    right: 30%
+}
