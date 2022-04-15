@@ -10,13 +10,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 55px;
-  width: 33%;
-  height: 100%;
+  
+  // width: 25%;
+  height: 100vh;
   padding: 15px;
-  background-color: blanchedalmond;
+  
+  box-sizing: border-box;
+  background-color: white;
 }
 .container > * {
   flex: 1 0 100%;
+  overflow: hidden
 }
 h1 {
   @include sans-bolded();

@@ -1,5 +1,5 @@
 .flag {
-  background: red;
+  background: white;
   display: inline-block;
   height: 94px;
   margin-bottom: 55px;
@@ -7,7 +7,7 @@
   width: 60px;
 }
 .flag:before {
-  border-top: 25px solid red;
+  border-top: 25px solid white;
   border-left: 30px solid transparent;
   border-right: 30px solid transparent;
   content: "";
@@ -17,10 +17,11 @@
   bottom: -24px;
   width: 0;
 }
-p{
+.level_p{
     font-family: 'Cormorant Garamond', serif;
     font-size: 37px;
     line-height: 30px;
+    color: black;
     margin: 0;
     position: absolute;
     bottom: 0;

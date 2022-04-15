@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
+import './App.scss'
 import SpellCard from './components/SpellCard';
 import Sidebar from './components/Sidebar';
-import Level from './components/Level';
+import Dashboard from './components/Dashboard';
 
 function App() {
   const url = 'https://api.open5e.com/spells/';
@@ -15,7 +16,12 @@ function App() {
   useEffect(() => {
     getSpells();
   });
-  return <SpellCard />
+  return(
+    <div className='app'>
+    <Sidebar />
+    <Dashboard />
+    </div>
+  );
 }
 
 export default App;

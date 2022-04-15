@@ -4,7 +4,7 @@ import './Level.scss'
 const Level = () => {
   return (
       <div className="flag">
-          <p>C</p>
+          <p className="level_p">C</p>
       </div>
   );
 };
