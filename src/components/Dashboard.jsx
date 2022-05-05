@@ -2,7 +2,7 @@ import "./Dashboard.scss";
 import Level from "./Level";
 import SpellCard from "./SpellCard";
 
-const Dashboard = () => {
+const Dashboard = ({spells}) => {
   return (
     <div className="dash__container">
       <div className="pick__section">
@@ -29,21 +29,12 @@ const Dashboard = () => {
           <p>0/0</p>
         </div>
         <div className="cards">
-          <SpellCard />
-          <SpellCard />
-          <SpellCard />
-          <SpellCard />
-          <SpellCard />
-          <SpellCard />
+          {spells.length !== 0 ? spells.map((x) => (<SpellCard key={x.slug} data={x} />)) : <></>}
         </div>
       </div>
       <div className="review__section">
-        <div className="currently_selected">
-
-        </div>
-        <div className="buttons">
-
-        </div>
+        <div className="currently_selected"></div>
+        <div className="buttons"></div>
       </div>
     </div>
   );
