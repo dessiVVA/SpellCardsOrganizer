@@ -1,37 +1,42 @@
 import React from "react";
 import './SpellCard.scss'
 
-const SpellCard = () => {
+const SpellCard = ({data}) => {
+  const slashSeparator = (strng) =>{
+    return strng.split(', ')
+              	.filter(x => x !== 'Ritual Caster')
+                .join(' | ');
+  }
   return (
     <div className="card">
       <section className="header">
-        <div className="title">Spell Title</div>
-        <div className="school">school</div>
-        <div className="level">2</div>
+        <div className="title">{data.name}</div>
+        <div className="school">{data.school}</div>
+        <div className="level">{data.level_int === 0 ? "C" : data.level_int}</div>
       </section>
       <section className="stats">
         <div className="casting">
           <h3>casting time</h3>
-          <p>1 action</p>
+          <p>{data.casting_time}</p>
         </div>
         <div className="range">
           <h3>range</h3>
-          <p>60 feet</p>
+          <p>{data.range}</p>
         </div>
         <div className="components">
           <h3>components</h3>
-          <p>v | s | m</p>
+          <p>{slashSeparator(data.components)}</p>
         </div>
         <div className="duration">
           <h3>duration</h3>
-          <p>1 hour</p>
+          <p>{data.duration}</p>
         </div>
       </section>
       <section className="icons">
 
       </section>
       <section className="castor">
-        <p>sorcerer | warlock | wizard</p>
+        <p>{slashSeparator(data.dnd_class)}</p>
         <hr />
       </section>
     </div>
