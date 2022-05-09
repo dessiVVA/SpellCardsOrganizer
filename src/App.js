@@ -8,16 +8,20 @@ import Dashboard from './components/Dashboard';
 function App() {
   const url = 'https://api.open5e.com/spells/';
 
-  const [spells, setSpells] = useState([])
+  const [spells, setSpells] = useState([]);
+  const [filteredSpells, setFilteredSpells] = useState([])
 
   useEffect(() => {
     fetchSpells(url)
-    .then((r) => setSpells(r))
+    .then((r) => {
+      setSpells(r);
+      setFilteredSpells(r)
+    })
   }, []);
   return(
     <div className='app'>
-    <Sidebar />
-    <Dashboard spells={spells}/>
+    <Sidebar spells={spells} setFilteredSpells={setFilteredSpells}/>
+    <Dashboard spells={filteredSpells}/>
     </div>
   );
 }
